@@ -1,8 +1,9 @@
 import static spark.Spark.*;
 
 public class App {
-  public static void main(String[] args) {
-     get("/hello", (request, response) -> "<!DOCTYPE html>" +
+  public static void main(String[] args) { staticFileLocation("/public");
+
+     get("/", (request, response) -> "<!DOCTYPE html>" +
          "<html>" +
          "<head>" +
            "<title>Hello Friend!</title>" +
@@ -16,7 +17,7 @@ public class App {
            "<p>But I like programming a lot, so I've got that going for me. </p>" +
            "<p>Looking forward to seeing you soon. I'll bring you back a souvenir. </p>" +
            "<p>Cheers,</p>" +
-           "<p>Travel Enthusiast Jane</p>" +
+           "<p>Travel Enthusiast Jane</p>" + "<p><a href='/favorite_photos' >P.S. Check out my favorite travel photos here.</a></p>" +
          "</body>" +
        "</html>"
     );
@@ -24,14 +25,15 @@ public class App {
     "<!DOCTYPE html>" +
       "<html>" +
       "<head>" +
-        "<title>Hello Friend!</title>" +
+        "<title>Hello Friend these are my favorite_photos!</title>" +
         "<link rel='stylesheet'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>" +
       "</head>" +
       "<body>" +
        "<h1>Favorite Traveling Photos</h1>" +
           "<ul>" +
-            "<li><img src='/images/foggymountain.jpeg' alt='A photo of a mountain.'/></li>" +
-            "<li><img src='/images/rockycoast.jpeg' alt='A photo of a a rocky beach.'/></li>" +
+            "<li><img src='/images/1.jpg' alt='A photo of a mountain.'/></li>" +
+            "<li><img src='/images/2.jpg' alt='A photo of a a rocky beach.'/></li>" +
+            "<li><img src='/images/4.jpg' alt='A photo of a a rocky beach.'/></li>"  +
           "</ul>" +
       "</body>" +
       "</html>"
